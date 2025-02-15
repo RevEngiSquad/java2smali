@@ -24,6 +24,8 @@ sometimes default `android.jar` is not enough i.e, missing some classes, you can
 
     APP_CLASSPATH=rt.jar java -jar java2smali.jar ./examples/example3/Example3.java
 
+or, you can grab the [`java2smali.jar`](https://github.com/RevEngiSquad/java2smali/releases/tag/android) with `android.jar` included from the releases and use it.
+
 Note that `Example2.java` import `example.Example`, so you must specify its class path directory.
 
 ### Related
