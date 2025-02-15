@@ -8,13 +8,21 @@ Compile:
 
 Run (in Unix system):
 
-    jara -jar java2smali.jar example/Example.java
+    jara -jar java2smali.jar ./examples/example/Example.java
 
 Then you should be able to find `*.smali` files in the `example/` directory.
 
 Another example run with imports:
 
-    APP_CLASSPATH=. jara -jar java2smali.jar example2/Example2.java
+    APP_CLASSPATH=./examples jara -jar java2smali.jar ./examples/example2/Example2.java
+
+Another example with android imports:
+
+    APP_CLASSPATH=~/Library/Android/sdk/platforms/android-28/android.jar jara -jar java2smali.jar ./examples/example3/Example3.java
+
+sometimes default `android.jar` is not enough i.e, missing some classes, you can specify your own `android.jar` or give [this](https://github.com/RevEngiSquad/cfr/releases/download/0.153-SNAPSHOT/rt.jar) a try which includes almost all classes.
+
+    APP_CLASSPATH=rt.jar jara -jar java2smali.jar example3/Example3.java
 
 Note that `Example2.java` import `example.Example`, so you must specify its class path directory.
 
